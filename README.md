@@ -2,11 +2,11 @@
 
 Welcome to the Rock, Paper, Scissors game – a classic showdown between you and the computer! 
 
-## Overview 🌐
+## 🌐 Overview
 
 This simple web-based game allows users to play Rock, Paper, Scissors against the computer. It features an intuitive interface, auto-play mode, and a score tracker to keep tabs on your wins, losses, and ties.
 
-## How It Works 🤔
+## 🤔 How It Works
 
 1. **Manual Play:**
    - Click on the Rock, Paper, or Scissors buttons to make your move.
@@ -20,7 +20,7 @@ This simple web-based game allows users to play Rock, Paper, Scissors against th
    - Your wins, losses, and ties are displayed on the scoreboard.
    - Click the 'Reset' button to clear the score and start fresh.
 
-## Components 🛠️
+## 🛠️ Components
 
 The game comprises the following components:
 
@@ -38,7 +38,7 @@ The game comprises the following components:
   - Shows the moves chosen by the player and the computer.
   - Announces the game result (Win, Lose, or Tie).
 
-## Features 🌟
+## 🌟 Features
 
 - **Responsive Design:**
   - Play the game seamlessly on various screen sizes.
@@ -49,7 +49,21 @@ The game comprises the following components:
 - **Score Persistence:**
   - Your game score is saved in the browser's local storage.
 
-## Improvements and Suggestions 🚀
+## 🔄 Code Updates
+
+### [1.1 - 16/01/2014]
+
+#### Code Enhancements:
+- Moved constants and the `moves` array outside the `autoPlay` function for better global scope.
+- Ensured consistent naming for CSS classes (e.g., `gameIcon` instead of `game-icon`).
+
+#### Button Toggle Function:
+- Separated the button toggle logic into a separate function (`toggleAutoPlayButton`) for better readability.
+
+#### Refactored Button Event Handling:
+- Improved the readability of the button click event handling using the `handleButtonClick` function.
+
+## 🔧 Improvements and Suggestions
 
 1. **Consistent Naming:**
    - Ensure consistent variable naming throughout the codebase.
@@ -69,7 +83,7 @@ The game comprises the following components:
 6. **Test Coverage:**
    - Enhance the codebase with unit tests to ensure robust functionality.
 
-## Contribution 🤝
+##  🤝 Contribution
 
 Contributions are welcome! If you have ideas for new features, improvements, or bug fixes, feel free to open an issue or submit a pull request.
 

@@ -3,6 +3,8 @@ const score = JSON.parse(localStorage.getItem('score')) || {
     lose: 0,
     tie: 0
 };
+
+const moves = ['rock', 'paper', 'scissors'];
 let change = false;
 let isAutoPlay = false;
 let intervalId;
@@ -27,30 +29,35 @@ const updateScore = () => {
 
 const updateMoves = (playerMove, comMove, result) => {
     const moveCompareElement = document.querySelector('.move-compare');
-    moveCompareElement.innerHTML = `You picked ${playerMove}, computer picked ${comMove}`;
+    moveCompareElement.innerHTML = `<div class="compare-icons"><div>You picked</div> <img class="game-icon" src="images/${playerMove}.svg"></div> <div class="compare-icons"><div>computer picked</div> <img class="game-icon" src="images/${comMove}.svg"></div>`;
 
     const resultElement = document.querySelector('.result-message');
     resultElement.innerHTML = `${result}`;
 };
 
+// Update robMove function to use constants
 const robMove = () => {
-    const random = Math.floor(Math.random() * 3);
-    return (random === 0) ? 'rock' : (random === 1) ? 'paper' : 'scissors';
+    return moves[Math.floor(Math.random() * moves.length)];
+};
+
+// made Function to avoid duplication in the code
+const determineWinner = (playerMove, comMove) => {
+    if (playerMove === comMove) {
+        return 'Tie';
+    } else if (
+        (playerMove === moves[0] && comMove === moves[2]) ||
+        (playerMove === moves[1] && comMove === moves[0]) ||
+        (playerMove === moves[2] && comMove === moves[1])
+    ) {
+        return 'You win';
+    } else {
+        return 'Computer wins';
+    }
 };
 
 const playGame = (playerMove) => {
     const comMove = robMove();
-    let result;
-
-    if (playerMove === 'rock') {
-        result = (comMove === 'rock') ? 'Tie' : (comMove === 'paper') ? 'Computer wins' : 'You win';
-
-    } else if (playerMove === 'paper') {
-        result = (comMove === 'paper') ? 'Tie' : (comMove === 'scissors') ? 'Computer wins' : 'You win';
-
-    } else {
-        result = (comMove === 'scissors') ? 'Tie' : (comMove === 'rock') ? 'Computer wins' : 'You win';
-    }
+    const result = determineWinner(playerMove, comMove);
 
     if (result === 'Computer wins') {
         score.lose += 1;
@@ -67,32 +74,36 @@ const playGame = (playerMove) => {
 
 updateScore();
 
+const toggleAutoPlayButton = (button) => {
+    if (!change) {
+        button.style.background = 'rgb(229, 78, 40)';
+        button.textContent = 'stop auto play';
+    } else {
+        button.style.background = 'rgb(40, 229, 87)';
+        button.textContent = 'auto play';
+    }
+    change = !change;
+};
+
+const handleButtonClick = (value) => {
+    const button = document.querySelector(`[value="${value}"]`);
+    if (value === 'reset') {
+        score.lose = 0;
+        score.wins = 0;
+        score.tie = 0;
+        localStorage.removeItem('score');
+        updateScore();
+    } else if (value === 'auto') {
+        toggleAutoPlayButton(button);
+        autoPlay();
+    } else {
+        playGame(value);
+    }
+};
+
 const buttons = document.querySelectorAll('.game-btn');
 buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        const value = button.value;
-        if (value === 'reset') {
-            score.lose = 0;
-            score.wins = 0;
-            score.tie = 0;
-            localStorage.removeItem('score');
-            updateScore();
-        } else if (value === 'auto') {
-            if (!change) {
-                button.style.background = 'rgb(255, 0, 0)';
-                button.textContent = 'stop auto play'
-                change = true
-                autoPlay();
-            } else {
-                button.style.background = 'rgb(0, 200, 0)';
-                button.textContent = 'auto play';
-                change = false;
-                autoPlay();
-            }
-        } else {
-            playGame(value);
-        }
-    });
+    button.addEventListener('click', () => handleButtonClick(button.value));
 });
 
 document.body.addEventListener('keydown', (event) => {

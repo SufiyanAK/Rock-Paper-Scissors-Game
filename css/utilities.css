@@ -1,0 +1,133 @@
+.container {
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+/* 2xl = 1536px = 96rem huge desktop screen */
+@media (max-width: 96em) {
+    .container {
+        max-width: 80em;
+    }
+
+}
+
+/* xl = 1280px = 80rem normal Desktop screen */
+@media (max-width: 80em) {
+    .container {
+        max-width: 64em;
+    }
+
+}
+
+/* lg = 1024px = 64rem Tabs and Ipad Portrait mode */
+@media (max-width: 64em) {
+    .container {
+        max-width: 48em;
+    }
+
+}
+
+/* md = 768px = 48rem Low resolution Tab and Ipad */
+@media (max-width: 48em) {
+    .container {
+        max-width: 40em;
+    }
+
+}
+
+/* sm = 640px = 40rem a little lower resolution */
+@media (max-width: 40em) {
+    .container {
+        max-width: 29.6875em;
+    }
+
+}
+
+/* xs = 475px = 29.6875rem Mobile Screen */
+@media (max-width: 29.6875rem) {
+    .container {
+        max-width: 100%;
+    }
+
+}
+
+
+
+
+
+
+/* For Basic need Initial */
+
+/* 2xl = 1536px = 96rem huge desktop screen */
+/* @media (max-width: 96em) {} */
+
+/* xl = 1280px = 80rem normal Desktop screen */
+/* @media (max-width: 80em) {} */
+
+/* lg = 1024px = 64rem Tabs and Ipad Portrait mode */
+/* @media (max-width: 64em) {} */
+
+/* md = 768px = 48rem Low resolution Tab and Ipad */
+/* @media (max-width: 48em) {} */
+
+/* sm = 640px = 40rem a little lower resolution */
+/* @media (max-width: 40em) {} */
+
+/* xs = 475px = 29.6875rem Mobile Screen */
+/* @media (max-width: 29.6875rem) {} */
+
+
+
+
+
+
+
+/* For Bigger Projects */
+
+/* 1730px */
+/* @media (max-width: 108.125em) {} */
+
+/* 1600px */
+/* @media (max-width: 100em) {} */
+
+/* 1400px */
+/* @media (max-width: 87.5em) {} */
+
+/* 1350px */
+/* @media (max-width: 84.375em) {} */
+
+/* 1300px */
+/* @media (max-width: 81.25em) {} */
+
+/* 1250px */
+/* @media (max-width: 78.125em) {} */
+
+/* 1150px */
+/* @media (max-width: 71.875em) {} */
+
+/* 1020px */
+/* @media (max-width: 63.75em) {} */
+
+/* 900px */
+/* @media (max-width: 56.25rem) {} */
+
+/* 750px */
+/* @media (max-width: 46.875em) {} */
+
+/* 700px */
+/* @media (max-width: 43.75em) {} */
+
+/* 600px */
+/* @media (max-width: 37.5em) {} */
+
+/* 450px */
+/* @media (max-width: 28.125em) {} */
+
+/* 425px */
+/* @media (max-width: 26.5625em) {} */
+
+/* 400px */
+/* @media (max-width: 25em) {} */
