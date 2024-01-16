@@ -28,10 +28,9 @@ const updateScore = () => {
 };
 
 const updateMoves = (playerMove, comMove, result) => {
-    let move = playerMove === 'r' ? 'rock' : playerMove === 'p' ? 'paper' : 'scissors'
 
     const moveCompareElement = document.querySelector('.move-compare');
-    moveCompareElement.innerHTML = `<div class="compare-icons"><div>You picked</div> <img class="game-icon" src="images/${move}.svg"></div> <div class="compare-icons"><div>computer picked</div> <img class="game-icon" src="images/${comMove}.svg"></div>`;
+    moveCompareElement.innerHTML = `<div class="compare-icons"><div>You picked</div> <img class="game-icon" src="images/${playerMove}.svg"></div> <div class="compare-icons"><div>computer picked</div> <img class="game-icon" src="images/${comMove}.svg"></div>`;
 
     const resultElement = document.querySelector('.result-message');
     resultElement.innerHTML = `${result}`;
@@ -109,7 +108,13 @@ buttons.forEach(button => {
 });
 
 document.body.addEventListener('keydown', (event) => {
-    if (event.key === 'r' || event.key === 'p' || event.key === 's') {
-        playGame(event.key);
+    if (event.key === 'r') {
+        playGame('rock');
+    } else if (event.key === 'p' ) {
+        playGame('paper');
+        
+    } else if (event.key === 's') {
+        playGame('scissors');
+        
     }
 });
