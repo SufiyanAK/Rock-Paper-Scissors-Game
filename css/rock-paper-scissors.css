@@ -31,6 +31,11 @@
     transition: all .5s;
 }
 
+.buttons-container .game-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
 .game-details-container {
     padding-top: 2rem;
     width: 100%;
@@ -96,6 +101,10 @@
 
 .auto-play-btn {
     background-color: rgb(40, 229, 87);
+}
+
+.how-play-btn {
+    background-color: rgb(0, 47, 84);
 }
 
 .github-repo {

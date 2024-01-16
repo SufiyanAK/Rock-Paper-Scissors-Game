@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors - How to Play</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+
+        h1, h2, p {
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .game-btn {
+            height: 10rem;
+            width: 10rem;
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background-color: inherit;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .game-btn:hover, .back-to-game:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .back-to-game {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background-color: inherit;
+            font-weight: 500;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Rock, Paper, Scissors - How to Play</h1>
+
+    <p>Welcome to the Rock, Paper, Scissors game! Follow the instructions below to play:</p>
+
+    <h2>Instructions:</h2>
+
+    <ul>
+        <li>Click on one of the following buttons to make your move:</li>
+        <li>
+            <a href="#" class="game-btn" onclick="alert('You chose Rock!')"><img class="game-icon" src="images/rock.svg" alt="Rock"></a>
+            <a href="#" class="game-btn" onclick="alert('You chose Paper!')"><img class="game-icon" src="images/paper.svg" alt="Paper"></a>
+            <a href="#" class="game-btn" onclick="alert('You chose Scissors!')"><img class="game-icon" src="images/scissors.svg" alt="Scissors"></a>
+        </li>
+        <li>Alternatively, use the keyboard shortcuts:</li>
+        <li>Press <strong>'r'</strong> for Rock, <strong>'p'</strong> for Paper, and <strong>'s'</strong> for Scissors.</li>
+        <li>After making your move, the computer will randomly choose its move.</li>
+        <li>The game result (Win, Lose, or Tie) will be displayed, and the scores will be updated accordingly.</li>
+        <li>Click the <strong>'Auto Play'</strong> button to let the computer play automatically.</li>
+        <li>Press the <strong>'Reset'</strong> button to clear the scores and start a new game.</li>
+    </ul>
+
+    <p>Have fun playing!</p>
+
+    <p onclick="location.href = 'index.html'" class="back-to-game">back</p>
+
+</body>
+</html>

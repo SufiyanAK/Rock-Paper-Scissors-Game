@@ -97,8 +97,6 @@ const handleButtonClick = (value) => {
     } else if (value === 'auto') {
         toggleAutoPlayButton(button);
         autoPlay();
-    } else {
-        playGame(value);
     }
 };
 
