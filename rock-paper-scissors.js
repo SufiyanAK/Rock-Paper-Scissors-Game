@@ -29,11 +29,11 @@ const updateScore = () => {
 
 const updateMoves = (playerMove, comMove, result) => {
 
+    // const resultElement = document.querySelector('.result-message');
     const moveCompareElement = document.querySelector('.move-compare');
-    moveCompareElement.innerHTML = `<div class="compare-icons"><div>You picked</div> <img class="game-icon" src="images/${playerMove}.svg"></div> <div class="compare-icons"><div>computer picked</div> <img class="game-icon" src="images/${comMove}.svg"></div>`;
+    moveCompareElement.innerHTML = `<div class="compare-icons"><div>You picked</div> <img class="game-icon" src="images/${playerMove}.svg"></div> <p class="result-message">${result}</p> <div class="compare-icons"><div>com picked</div> <img class="game-icon" src="images/${comMove}.svg"></div>`;
 
-    const resultElement = document.querySelector('.result-message');
-    resultElement.innerHTML = `${result}`;
+    // resultElement.innerHTML = ``;
 };
 
 // Update robMove function to use constants
@@ -97,6 +97,8 @@ const handleButtonClick = (value) => {
     } else if (value === 'auto') {
         toggleAutoPlayButton(button);
         autoPlay();
+    } else {
+        playGame(value);
     }
 };
 

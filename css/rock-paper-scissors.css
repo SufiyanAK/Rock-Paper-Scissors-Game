@@ -28,11 +28,11 @@
     border: none;
     width: 10rem;
     cursor: pointer;
-    transition: all .5s;
+    transition: background-color .5s, color .5s, border-radius .5s;
 }
 
 .buttons-container .game-btn:hover {
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
     border-radius: 1rem;
 }
 
@@ -49,6 +49,8 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
 }
 
 .move-compare .compare-icons {
@@ -60,35 +62,35 @@
     align-items: center;
 }
 
-.compare-icons div, .result-message, .score-board, .score-buttons-container .game-btn {
+.compare-icons div,
+.result-message,
+.score-board {
     font-size: 2rem;
     font-weight: 500;
     color: #fff;
 }
 
-.result-message {
-    padding-bottom: 1rem;
-}
-
-.score-board {
-    background-color: rgb(255,255,255);
+.score-board, .result-message, .compare-icons div {
+    background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     padding: 1rem;
     border: 2px solid black;
     border-radius: 1rem;
 }
 
-.score-buttons-container .game-btn {
+.score-buttons-container .game-btn,
+.how-play-btn {
     margin-left: 1rem;
     border: none;
     padding: 1rem 2rem;
     border-radius: 1rem;
     font-size: 1.4rem;
     font-weight: 500;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: all .5s;
+    margin-bottom: 3rem;
 }
 
 .game-btn:hover {
@@ -108,7 +110,7 @@
 }
 
 .github-repo {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -128,8 +130,189 @@
     color: black;
 }
 
-
 .github-repo img {
     width: 2.5rem;
     height: 2.5rem;
 }
+
+/* 2xl = 1536px = 96rem huge desktop screen */
+@media (max-width: 96em) {
+    #title {
+        font-size: 3.5rem;
+    }
+
+    .move-compare .compare-icons {
+        width: 14rem;
+        height: 14rem;
+    }
+
+    .compare-icons div,
+    .result-message,
+    .score-board,
+    .score-buttons-container .game-btn,
+    .how-play-btn {
+        font-size: 1.6rem;
+    }
+}
+
+/* xl = 1280px = 80rem normal Desktop screen */
+@media (max-width: 80em) {
+    body {
+        background-size: cover;
+    }
+
+    #title {
+        font-size: 3rem;
+    }
+
+    .move-compare .compare-icons {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .compare-icons div,
+    .result-message,
+    .score-board,
+    .score-buttons-container .game-btn,
+    .how-play-btn {
+        font-size: 1.4rem;
+    }
+   
+    .github-repo a {
+        font-size: .8rem;
+    }
+    
+    .github-repo img {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+/* md = 768px = 48rem Low resolution Tab and Ipad */
+@media (max-width: 48em) {
+    body {
+        background-size: 40rem;
+    }
+
+    #title {
+        font-size: 2.5rem;
+    }
+
+    .move-compare .compare-icons {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .compare-icons div,
+    .result-message,
+    .score-board {
+        font-size: 1rem;
+        background-color: rgb(255, 255, 255);
+        color: black;
+        border: 2px solid black;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    .score-buttons-container .game-btn,
+    .how-play-btn {
+        font-size: 1rem;
+    }
+
+    .game-details-container {
+        gap: 1rem;
+    }
+}
+
+/* sm = 640px = 40rem a little lower resolution */
+@media (max-width: 40em) {
+    #title {
+        font-size: 2rem;
+    }
+
+    .game-container {
+        height: 80vh;
+    }
+
+    .buttons-container {
+        height: 9rem;
+    }
+
+    .buttons-container .game-btn {
+        width: 8rem;
+    }
+
+    .score-buttons-container .game-btn,
+    .how-play-btn {
+        margin-left: 1rem;
+        padding: .8rem 1.4rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    .move-compare .compare-icons {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .compare-icons div,
+    .result-message,
+    .score-board {
+        font-size: .8rem;
+        padding: .75rem;
+    }
+
+    .github-repo a {
+        font-size: .6rem;
+    }
+    
+    .github-repo img {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+}
+
+/* xs = 475px = 29.6875rem Mobile Screen */
+@media (max-width: 29.6875rem) {
+    .game-container {
+        padding: 0;
+    }
+
+    #title {
+        font-size: 2rem;
+    }
+
+    .buttons-container {
+        height: 6rem;
+    }
+
+    .buttons-container .game-btn {
+        width: 5.5rem;
+    }
+
+    .score-buttons-container .game-btn,
+    .how-play-btn {
+        margin-left: .8rem;
+        border-radius: 8px;
+        padding: .6rem .8rem;
+        font-size: 0.6rem;
+        font-weight: 500;
+    }
+
+    .move-compare .compare-icons {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .compare-icons div,
+    .result-message,
+    .score-board {
+        font-size: .6rem;
+        padding: .75rem;
+    }
+
+    .game-details-container {
+        gap: 2rem;
+    }
+}
+
