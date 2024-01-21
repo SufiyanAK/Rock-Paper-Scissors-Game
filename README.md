@@ -1,7 +1,10 @@
 # 🪨✂️📄 Rock, Paper, Scissors Game 🎮
 
 Welcome to the Rock, Paper, Scissors game – a classic showdown between you and the computer! 
-[LINK TO WEBSITE](simple-rock-paper-scissors-sak.netlify.app/index.html)
+
+## 🚀 Play Now 
+
+**[Click here to play the game!](https://simple-rock-paper-scissors-sak.netlify.app/index.html)**
 
 ## 🌐 Overview
 
