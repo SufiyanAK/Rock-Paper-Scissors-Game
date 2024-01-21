@@ -93,8 +93,12 @@
     margin-bottom: 3rem;
 }
 
-.game-btn:hover {
+.game-btn:hover, .how-play-btn:hover {
     transform: translateY(-10px);
+}
+
+.game-btn:active, .how-play-btn:active {
+    transform: translateY(10px);
 }
 
 .reset-score-btn {

@@ -5,9 +5,7 @@ const score = JSON.parse(localStorage.getItem('score')) || {
 };
 
 const moves = ['rock', 'paper', 'scissors'];
-let change = false;
-let isAutoPlay = false;
-let intervalId;
+let change = false, isAutoPlay = false, intervalId;
 
 const autoPlay = () => {
     if (!isAutoPlay) {
@@ -24,11 +22,10 @@ const autoPlay = () => {
 
 const updateScore = () => {
     const scoreBoardElement = document.querySelector('.score-board');
-    scoreBoardElement.innerHTML = `Wins: ${score.wins}, Lose: ${score.lose}, Ties: ${score.tie}`;
+    scoreBoardElement.textContent = `Wins: ${score.wins}, Lose: ${score.lose}, Ties: ${score.tie}`;
 };
 
 const updateMoves = (playerMove, comMove, result) => {
-
     // const resultElement = document.querySelector('.result-message');
     const moveCompareElement = document.querySelector('.move-compare');
     moveCompareElement.innerHTML = `<div class="compare-icons"><div>You picked</div> <img class="game-icon" src="images/${playerMove}.svg"></div> <p class="result-message">${result}</p> <div class="compare-icons"><div>com picked</div> <img class="game-icon" src="images/${comMove}.svg"></div>`;

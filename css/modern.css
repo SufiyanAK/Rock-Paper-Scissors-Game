@@ -49,6 +49,14 @@ body {
 	position: relative;
 }
 
+/* md = 768px = 48rem Low resolution Tab and Ipad */
+@media (max-width: 48em) {
+    body {
+        background-image: none;
+		background-color: rgb(40, 180, 229);
+    }
+}
+
 /*
 Grouping content
 ================
